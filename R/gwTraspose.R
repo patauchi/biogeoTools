@@ -7,5 +7,5 @@
 #' @export
 
 gwTraspose <- function(m, byrow = FALSE){
-  return(gw_tt(m, byrow = FALSE))
+  return(gw_tt(m, byrow))
 }
