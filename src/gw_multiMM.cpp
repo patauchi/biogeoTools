@@ -1,4 +1,4 @@
-#define BOOST_DISABLE_ASSERTS
+#define EIGEN_PERMANENTLY_DISABLE_STUPID_WARNINGS
 
 #include <RcppArmadillo.h>
 #include <RcppEigen.h>
