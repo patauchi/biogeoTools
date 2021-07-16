@@ -1,4 +1,3 @@
-#define BOOST_DISABLE_ASSERTS
 
 #include "config.h"
 #include <RcppArmadillo.h>
