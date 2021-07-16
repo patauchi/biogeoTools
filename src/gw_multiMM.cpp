@@ -1,4 +1,4 @@
-#define EIGEN_PERMANENTLY_DISABLE_STUPID_WARNINGS
+#define EIGEN_WARNINGS_DISABLED
 
 #include <RcppArmadillo.h>
 #include <RcppEigen.h>
