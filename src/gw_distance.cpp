@@ -12,9 +12,9 @@ using namespace Rcpp;
 using namespace arma;
 using namespace stats;
 
-double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, int tau) {
+double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, double tau) {
   double as1 = ((lon2 - lon1 ) * (lon2 - lon1 )) + ((lat2 - lat1 ) * (lat2 - lat1 ));
-  double as2 = std::exp(-as1 / (2 * tau * tau));
+  double as2 = std::exp(-as1 / (2 * (tau * tau)));
   return as2;
 }
 
@@ -26,7 +26,7 @@ double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, int tau) 
 // @return ada das 
 
 // [[Rcpp::export]]
-arma::vec gw_Distance(arma::mat dp, arma::vec loc, int tau) {
+arma::vec gw_Distance(arma::mat dp, arma::vec loc, double tau) {
   int N = dp.n_rows, j;
   vec dists(N, fill::zeros);
   double uout = loc(0), vout = loc(1);
