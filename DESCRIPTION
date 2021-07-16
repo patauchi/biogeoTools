@@ -1,20 +1,19 @@
 Package: biogeoTools
 Type: Package
-Title: Tools for Biogeographical An
+Title: Tools for Biogeographical Analyses
 Version: 1.0
 Date: 2021-07-16
-Authors@R: c(person("P. Joser", "Atauchi", 
+Authors@R: c(person("P.J", "Atauchi", 
                      email = "patauchi@gmail.com",
                      role = c("aut", "cre"),
                      comment = c(ORCID = "xxxxx")),
-             person("A. Townsend", "Peterson", 
+             person("A.T", "Peterson", 
                      email = "town@ku.edu",
-                     role = "ctb",
+                     role = "aut",
                      comment = c(ORCID = "xxxxxx")))
-                     
 Description: One paragraph description of what the package does as one or more full sentences.
 Maintainer: P. Joser Atauchi <patauchi@gmail.com>
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.7),RcppArmadillo
-LinkingTo: Rcpp,RcppArmadillo ,RcppEigen
+LinkingTo: Rcpp, RcppArmadillo,RcppEigen
 RoxygenNote: 7.1.1

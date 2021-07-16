@@ -5,7 +5,6 @@
 #' @param tau sadasda
 #' @description trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
 #' @return Returns the area under the Partial ROC curve.
-#' @import Rcpp RcppArmadillo
 #' @useDynLib biogeoTools
 #' @export
 
