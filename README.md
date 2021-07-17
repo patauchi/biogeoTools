@@ -32,7 +32,7 @@ Users can fin help for all `biogeoTools` functions at http::
 Please cite the package as
 Atauchi, P.J., Peterson, A. T. (2021). biogeoTools: Tools for Biogeographical Analyses. R package version 1.0.
 
-Please cite the method used as 
+## Please cite the method used as 
 
 #### Environmental Heterogeneity
 Atauchi, P.J., Peterson, A. T. (2022). The importance of environmental heterogeneity on species distribution
