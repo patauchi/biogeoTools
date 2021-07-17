@@ -34,9 +34,9 @@ Atauchi, P.J., Peterson, A. T. (2021). biogeoTools: Tools for Biogeographical An
 
 ### Environmental Heterogeneity
 Atauchi, P.J., Peterson, A. T. (2022). The importance of environmental heterogeneity on species distribution.
-s
-The paper of the application is accesible from
-https://
+
+
+The paper of the application is accesible from https://
 
 
 # Acknowledgements
