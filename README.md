@@ -46,7 +46,7 @@ Atauchi, P.J., Peterson, A. T. (2022). Bias on spatial points
 The paper of the application is accesible from https://
 
 
-### effect on bias samples on species distribution models
+### Effect of the Bias Samples on Species Distribution Models
 Atauchi, P.J., Peterson, A. T. (2022). 
 
 
