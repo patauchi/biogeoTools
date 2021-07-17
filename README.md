@@ -39,7 +39,20 @@ Atauchi, P.J., Peterson, A. T. (2022). The importance of environmental heterogen
 The paper of the application is accesible from https://
 
 
+### Points Spatial Correlation
+Atauchi, P.J., Peterson, A. T. (2022). Bias on spatial points
+
+
+The paper of the application is accesible from https://
+
+
+### effect on bias samples on species distribution models
+Atauchi, P.J., Peterson, A. T. (2022). 
+
+
+The paper of the application is accesible from https://
+
+
 # Acknowledgements
 
-Posgrado en Ciencias Biológicas UNAM for academic training; GSoC 2016, PAIPIIT IN112175 (2015) and IN116018 (2018) for partial financial support.
-
+Biodiversity Institute, The University of Kansas for academic trainingl; MatBios 2021 PAIP N87387257 and I324927 for partial financial support.
