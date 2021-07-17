@@ -28,8 +28,9 @@ devtools::install_github('patauchi/biogeoTools',build_vignettes=TRUE)
 Users can fin help for all `biogeoTools` functions at http::
 
 # References
+Please cite the package as
 
-### Please cite the package as
+### R Packages
 Atauchi, P.J., Peterson, A. T. (2021). biogeoTools: Tools for Biogeographical Analyses. R package version 1.0.
 
 ### Environmental Heterogeneity
