@@ -5,17 +5,18 @@
 #' @param save boolean. `TRUE` save raster file in local computer
 #' @param outdir character. Folder name
 #' @param cores Numeric. cores or threats
+#' @param type server. default SOCK. Cluster computer under nodes RMPI
 #' @description This function computes and returns the distance matrix computed by using the specified distance measure to compute the distances between the rows of a data matrix.
 #' @return Returns the geographical weights distance among environmental layers or variables.
 #' @importFrom stats cov
 #' @importFrom data.table data.table
 #' @importFrom parallel stopCluster
-#' @import foreach raster terra doSNOW
+#' @import foreach raster terra doSNOW doMPI
 #' @useDynLib biogeoTools
 #' @export
 
 
-gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, outdir='.') {
+gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, outdir='.', type='SOCK') {
 
   # if(class(layers) != 'RasterStack' | class(layers) != 'SpatRaster'){
   #   stop('Must be a rasterStack or rast object')
@@ -31,9 +32,15 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
     resIn <- terra::res(Hetero_base)[1]
 
   if(parallel==TRUE){
-    cl <- parallel::makeCluster(cores, 'SOCK')
-    doSNOW::registerDoSNOW(cl)
-    foreach::getDoParWorkers()
+    
+    
+    
+    if(type=='SOCK'){
+      cl <- parallel::makeCluster(cores, 'SOCK')
+      doSNOW::registerDoSNOW(cl)
+      foreach::getDoParWorkers()
+    }
+    
     
     z <- foreach(i=1:nrow(asas2), .packages = "Rcpp") %dopar% { 
       #  for(i in 1:nrow(asas2)) {
@@ -49,8 +56,14 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
       sdev <- sqrt(ev)
       mean(sdev)
     }
-    stopCluster(cl)
-    future::plan(future::sequential)
+    
+    if(type=='SOCK'){
+      stopCluster(cl)
+      future::plan(future::sequential)
+    }
+    
+
+    
   } else{
       z <- list()
       for(i in 1:nrow(asas2)) {

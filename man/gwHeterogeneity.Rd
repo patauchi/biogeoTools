@@ -10,7 +10,8 @@ gwHeterogeneity(
   parallel = TRUE,
   cores = 4,
   save = FALSE,
-  outdir = "."
+  outdir = ".",
+  type = "SOCK"
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ gwHeterogeneity(
 \item{save}{boolean. `TRUE` save raster file in local computer}
 
 \item{outdir}{character. Folder name}
+
+\item{type}{server. default SOCK. Cluster computer under nodes RMPI}
 }
 \value{
 Returns the geographical weights distance among environmental layers or variables.
