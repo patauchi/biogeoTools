@@ -2,18 +2,18 @@
 % Please edit documentation in R/gwMutiMatrix.R
 \name{gwMultiMatrix}
 \alias{gwMultiMatrix}
-\title{Trapezoidal integration for Partial ROC curve}
+\title{Matrix Multiplication}
 \usage{
 gwMultiMatrix(A, B)
 }
 \arguments{
-\item{A}{fractional area predicted presence}
+\item{A}{numeric or complex matrices or vectors.}
 
-\item{B}{sensibility at threshold (fract_area value).}
+\item{B}{numeric or complex matrices or vectors.}
 }
 \value{
-Returns the area under the Partial ROC curve.
+Multiplies two matrices
 }
 \description{
-trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
+Multiplies two matrices, if they are conformable. If one argument is a vector, it will be promoted to either a row or column matrix to make the two arguments conformable. If both are vectors of the same length, it will return the inner product (as a matrix).
 }

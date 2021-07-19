@@ -26,13 +26,13 @@ double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, double ta
 // @return ada das 
 
 // [[Rcpp::export]]
-arma::vec gw_Distance(arma::mat dp, arma::vec loc, double tau) {
-  int N = dp.n_rows, j;
+arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau) {
+  int N = coodXY.n_rows, j;
   vec dists(N, fill::zeros);
-  double uout = loc(0), vout = loc(1);
+  double uout = pointXY(0), vout = pointXY(1);
   for (j = 0; j < N; j++) {
     
-    dists(j) = sp_dists_pp(dp(j, 0), uout, dp(j, 1), vout, tau);
+    dists(j) = sp_dists_pp(coodXY(j, 0), uout, coodXY(j, 1), vout, tau);
     
   }
   return dists;

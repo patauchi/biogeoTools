@@ -15,7 +15,7 @@ Description: One paragraph description of what the package does as one or more f
 Maintainer: P. Joser Atauchi <patauchi@gmail.com>
 License: GPL-3
 Encoding: UTF-8
-Imports: Rcpp (>= 1.0.7), RcppArmadillo
+Imports: Rcpp (>= 1.0.7), RcppArmadillo, data.table, future, foreach, raster, terra, doSNOW
 LinkingTo: Rcpp, RcppArmadillo, RcppEigen
 LazyData: true
 RoxygenNote: 7.1.1

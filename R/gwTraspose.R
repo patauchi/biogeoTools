@@ -1,9 +1,16 @@
-#' Trapezoidal integration for Partial ROC curve
-#' @param m fractional area predicted presence
-#' @param byrow boolean asdad
-#' @description trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
-#' @return Returns the area under the Partial ROC curve.
+#' Matrix Transpose
+#' @param m a matrix or data.frame, typically.
+#' @param byrow a boolean. Ordering by colums `default=FALSE`. `TRUE` order by rows
+#' @description Given a matrix or data.frame `m`, `gwTraspose` returns the transpose of `m`.
+#' @return A matrix, with dim and dimnames constructed appropriately from those of `m`, 
+#' and other attributes except names copied across.
+#' @examples
+#' # matrix
+#' a <- matrix(1:28, 4, 7)
+#' gwTraspose(a, byrow=TRUE)
+#' 
 #' @useDynLib biogeoTools
+#' @import Rcpp
 #' @export
 
 gwTraspose <- function(m, byrow = FALSE){

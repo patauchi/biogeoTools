@@ -2,20 +2,20 @@
 % Please edit documentation in R/gwDistance.R
 \name{gwDistance}
 \alias{gwDistance}
-\title{Trapezoidal integration for Partial ROC curve}
+\title{Geographical Weights Distance Matrix Computation}
 \usage{
 gwDistance(coodXY, pointXY, tau)
 }
 \arguments{
-\item{coodXY}{fractional area predicted presence}
+\item{coodXY}{Matrix. Matrix of coordinates e.g. longitude/latitude, unit=long/lat}
 
-\item{pointXY}{sensibility at threshold (fract_area value).}
+\item{pointXY}{Matrix. Point pairs e.g. longitude/latitude}
 
 \item{tau}{sadasda}
 }
 \value{
-Returns the area under the Partial ROC curve.
+Returns the geographical weights distance among environmental layers or variables.
 }
 \description{
-trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
+This function computes and returns the distance matrix computed by using the specified distance measure to compute the distances between the rows of a data matrix.
 }

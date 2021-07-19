@@ -2,17 +2,17 @@
 % Please edit documentation in R/gwRound.R
 \name{gwRound}
 \alias{gwRound}
-\title{Trapezoidal integration for Partial ROC curve}
+\title{Rounding of Numbers}
 \usage{
 gwRound(A, digits = 10L)
 }
 \arguments{
-\item{A}{fractional area predicted presence}
+\item{A}{a numeric vector.}
 
-\item{digits}{diitsos}
+\item{digits}{integer indicating the number of decimal places (round) or significant digits (signif) to be used. Negative values are allowed (see ‘Details’)}
 }
 \value{
-Returns the area under the Partial ROC curve.
+`round` rounds the values in its first argument to the specified number of decimal places (default 0). See ‘Details’ about “round to even” when rounding off a 10.
 }
 \description{
 trapozoid_roc applies the trapezoidal integration for Partial ROC curve.

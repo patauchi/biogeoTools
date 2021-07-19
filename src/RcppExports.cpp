@@ -13,15 +13,15 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // gw_Distance
-arma::vec gw_Distance(arma::mat dp, arma::vec loc, double tau);
-RcppExport SEXP _biogeoTools_gw_Distance(SEXP dpSEXP, SEXP locSEXP, SEXP tauSEXP) {
+arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau);
+RcppExport SEXP _biogeoTools_gw_Distance(SEXP coodXYSEXP, SEXP pointXYSEXP, SEXP tauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type dp(dpSEXP);
-    Rcpp::traits::input_parameter< arma::vec >::type loc(locSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type coodXY(coodXYSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pointXY(pointXYSEXP);
     Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
-    rcpp_result_gen = Rcpp::wrap(gw_Distance(dp, loc, tau));
+    rcpp_result_gen = Rcpp::wrap(gw_Distance(coodXY, pointXY, tau));
     return rcpp_result_gen;
 END_RCPP
 }

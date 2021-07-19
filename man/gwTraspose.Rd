@@ -2,18 +2,25 @@
 % Please edit documentation in R/gwTraspose.R
 \name{gwTraspose}
 \alias{gwTraspose}
-\title{Trapezoidal integration for Partial ROC curve}
+\title{Matrix Transpose}
 \usage{
 gwTraspose(m, byrow = FALSE)
 }
 \arguments{
-\item{m}{fractional area predicted presence}
+\item{m}{a matrix or data.frame, typically.}
 
-\item{byrow}{boolean asdad}
+\item{byrow}{a boolean. Ordering by colums `default=FALSE`. `TRUE` order by rows}
 }
 \value{
-Returns the area under the Partial ROC curve.
+A matrix, with dim and dimnames constructed appropriately from those of `m`, 
+and other attributes except names copied across.
 }
 \description{
-trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
+Given a matrix or data.frame `m`, `gwTraspose` returns the transpose of `m`.
+}
+\examples{
+# matrix
+a <- matrix(1:28, 4, 7)
+gwTraspose(a, byrow=TRUE)
+
 }
