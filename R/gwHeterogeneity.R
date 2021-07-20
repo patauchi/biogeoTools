@@ -88,6 +88,10 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
 
   if(save){
     if(!dir.exists(outdir)){dir.create(outdir)}
+    
+    namsss<- paste0('Heterog_', factor)
+    names(Hetero_base) <- namsss
+    
     terra::writeRaster(Hetero_base, 
                        paste0(outdir, '/Hetero_', factor,'.tif'))
     
