@@ -87,8 +87,9 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
   
 
   if(save){
+    if(!dir.exists(Hetero_base)){dir.create(Hetero_base)}
     terra::writeRaster(Hetero_base, 
-                       paste0(outdir, '/Heterogeneity_',(resIn * factor),'_res.tif'))
+                       paste0(outdir, '/Hetero_', factor,'.tif'))
     
   } else{
    plot(Hetero_base) 
