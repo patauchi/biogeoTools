@@ -37,6 +37,30 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// gw_plus
+NumericMatrix gw_plus(NumericMatrix& X, NumericVector& y);
+RcppExport SEXP _biogeoTools_gw_plus(SEXP XSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< NumericVector& >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(gw_plus(X, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gw_minus
+NumericMatrix gw_minus(NumericMatrix& X, NumericVector& y);
+RcppExport SEXP _biogeoTools_gw_minus(SEXP XSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< NumericVector& >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(gw_minus(X, y));
+    return rcpp_result_gen;
+END_RCPP
+}
 // gw_round
 NumericVector gw_round(const NumericVector& A, int digits);
 RcppExport SEXP _biogeoTools_gw_round(SEXP ASEXP, SEXP digitsSEXP) {
@@ -65,6 +89,8 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_biogeoTools_gw_Distance", (DL_FUNC) &_biogeoTools_gw_Distance, 3},
     {"_biogeoTools_gw_multiMM", (DL_FUNC) &_biogeoTools_gw_multiMM, 2},
+    {"_biogeoTools_gw_plus", (DL_FUNC) &_biogeoTools_gw_plus, 2},
+    {"_biogeoTools_gw_minus", (DL_FUNC) &_biogeoTools_gw_minus, 2},
     {"_biogeoTools_gw_round", (DL_FUNC) &_biogeoTools_gw_round, 2},
     {"_biogeoTools_gw_tt", (DL_FUNC) &_biogeoTools_gw_tt, 2},
     {NULL, NULL, 0}

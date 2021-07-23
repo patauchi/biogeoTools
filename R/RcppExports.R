@@ -9,6 +9,14 @@ gw_multiMM <- function(A, B) {
     .Call('_biogeoTools_gw_multiMM', PACKAGE = 'biogeoTools', A, B)
 }
 
+gw_plus <- function(X, y) {
+    .Call('_biogeoTools_gw_plus', PACKAGE = 'biogeoTools', X, y)
+}
+
+gw_minus <- function(X, y) {
+    .Call('_biogeoTools_gw_minus', PACKAGE = 'biogeoTools', X, y)
+}
+
 gw_round <- function(A, digits = 0L) {
     .Call('_biogeoTools_gw_round', PACKAGE = 'biogeoTools', A, digits)
 }

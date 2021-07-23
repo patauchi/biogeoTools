@@ -1,12 +1,7 @@
-
-#include "config.h"
 #include <RcppArmadillo.h>
-#include <Rcpp.h>
-#include <math.h>
-#include <Rmath.h>
-
-// [[Rcpp::plugins(cpp11)]]
 // [[Rcpp::depends(RcppArmadillo)]]
+// [[Rcpp::plugins(cpp11)]]
+
 
 using namespace Rcpp;
 using namespace arma;
@@ -18,8 +13,6 @@ double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, double ta
   return as2;
 }
 
-
-// [[Rcpp::export]]
 arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau) {
   int N = coodXY.n_rows, j;
   vec dists(N, fill::zeros);
@@ -31,3 +24,28 @@ arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau) {
   }
   return dists;
 }
+
+NumericVector gw_round(const NumericVector& A, int digits = 0) {
+  NumericVector B = clone(A);
+  std::size_t K = A.size();
+  for (std::size_t k = 0; k < K; k++) {
+    B[k] = ::Rf_fround(A[k], digits);
+  }
+  return B;
+}
+
+
+
+
+// [[Rcpp::export]]
+NumericVector gw_hetero(arma::mat coodXY, arma::vec pointXY, double tau){
+  
+  Rcpp::NumericVector ww = gw_Distance(coodXY, pointXY, tau);
+  
+    
+  
+
+  }
+
+
+

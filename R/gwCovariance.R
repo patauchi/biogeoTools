@@ -9,9 +9,9 @@
 gwCovariance <- function(y, ww) {
   if (missing(ww)) return (cov(y))
   w <-biogeoTools::gwRound(ww / sum(ww), 10) # Standardize the weights
-  y.bar <- colSums(y * w)
-  z <- biogeoTools::gwTraspose(y, byrow = TRUE) - y.bar                     # Remove the means
-  gwMultiMatrix(z, w * biogeoTools::gwTraspose(z, byrow = TRUE))
+  y.bar <- colSums(gwplus(y, w))
+  z <- gwminus(biogeoTools::gwTraspose(y, byrow = TRUE), y.bar)
+  gwMultiMatrix(z, gwplus(biogeoTools::gwTraspose(z, byrow = TRUE), w))
 
 }
 
