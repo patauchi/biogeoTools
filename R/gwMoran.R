@@ -3,6 +3,8 @@
 #' @param c1 a numeric vector, the first (x) value of a column of coordinates
 #' @param c2 a numeric vector, the second (y) value of a column of coordinates
 #' @param alternative a character sring specifying the alternative hypothesis that is tested against; must be one of "two.sided", "less", or "greater", or any unambiguous abbreviation of these.
+#' @importFrom  stats pnorm
+#' @export
 
 moranTest <- function(x, c1, c2, alternative='two.sided'){
   res <- calc_moran(x, c1, c2)

@@ -37,3 +37,7 @@ gw_tt <- function(m, byrow = FALSE) {
     .Call('_biogeoTools_gw_tt', PACKAGE = 'biogeoTools', m, byrow)
 }
 
+gw_hetero_rmpi <- function(coodXY, pointXY, Y, tau) {
+    .Call('_biogeoTools_gw_hetero_rmpi', PACKAGE = 'biogeoTools', coodXY, pointXY, Y, tau)
+}
+

@@ -123,6 +123,20 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// gw_hetero_rmpi
+arma::mat gw_hetero_rmpi(arma::mat coodXY, arma::vec pointXY, arma::mat Y, double tau);
+RcppExport SEXP _biogeoTools_gw_hetero_rmpi(SEXP coodXYSEXP, SEXP pointXYSEXP, SEXP YSEXP, SEXP tauSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type coodXY(coodXYSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pointXY(pointXYSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(gw_hetero_rmpi(coodXY, pointXY, Y, tau));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_biogeoTools_gw_Distance", (DL_FUNC) &_biogeoTools_gw_Distance, 3},
@@ -134,6 +148,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_biogeoTools_gw_minus", (DL_FUNC) &_biogeoTools_gw_minus, 2},
     {"_biogeoTools_gw_round", (DL_FUNC) &_biogeoTools_gw_round, 2},
     {"_biogeoTools_gw_tt", (DL_FUNC) &_biogeoTools_gw_tt, 2},
+    {"_biogeoTools_gw_hetero_rmpi", (DL_FUNC) &_biogeoTools_gw_hetero_rmpi, 4},
     {NULL, NULL, 0}
 };
 

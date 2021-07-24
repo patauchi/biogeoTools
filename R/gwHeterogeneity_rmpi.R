@@ -16,21 +16,21 @@
 #' @export
 
 
-gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, outdir='.', type='SOCK') {
-
+gwHeterogeneity_rmpi <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, outdir='.', type='SOCK') {
+  
   # if(class(layers) != 'RasterStack' | class(layers) != 'SpatRaster'){
   #   stop('Must be a rasterStack or rast object')
   # }
- 
-   # asas2 <-  as.data.frame(terra::rast(list.files(folder_vars, pattern = ".tif$", full.names = T)), xy=TRUE)
-    asas2 <-  as.data.frame(layers, xy=TRUE)
-    DTIN <- sapply(1:dim(asas2[,3:21])[2], function(x) (asas2[,3:21][, x] - min(asas2[,3:21][, x])) / 
-                     (max(asas2[,3:21][, x]) - min(asas2[,3:21][, x])))
-    
-    Hetero_base <- layers[[1]] 
-    heteroCellID <- terra::cellFromXY(layers, as.matrix(asas2[,1:2]))
-    resIn <- terra::res(Hetero_base)[1]
-
+  
+  # asas2 <-  as.data.frame(terra::rast(list.files(folder_vars, pattern = ".tif$", full.names = T)), xy=TRUE)
+  asas2 <-  as.data.frame(layers, xy=TRUE)
+  DTIN <- sapply(1:dim(asas2[,3:21])[2], function(x) (asas2[,3:21][, x] - min(asas2[,3:21][, x])) / 
+                   (max(asas2[,3:21][, x]) - min(asas2[,3:21][, x])))
+  
+  Hetero_base <- layers[[1]] 
+  heteroCellID <- terra::cellFromXY(layers, as.matrix(asas2[,1:2]))
+  resIn <- terra::res(Hetero_base)[1]
+  
   if(parallel==TRUE){
     
     
@@ -47,8 +47,8 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
       # i <- 171
       #  print(i)
       p <- asas2[i, 1:2]
-      ww <- biogeoTools::gwDistance(coodXY = as.matrix(asas2[,1:2]), pointXY = as.matrix(p), tau = resIn * factor)
-      covmat <- biogeoTools::gwCovariance(y=DTIN, w=ww)
+      covmat<-  biogeoTools::gwheterroRmpi(coodXY = as.matrix(asas2[,1:2]), pointXY = as.matrix(p), tau = resIn * factor)
+      
       edc <- eigen(covmat, symmetric = TRUE)
       ev <- edc$values
       if (any(neg <- ev < 0)) {ev[neg] <- 0}
@@ -61,30 +61,30 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
       future::plan(future::sequential)
     }
     
-
+    
     
   } else{
-      z <- list()
-      for(i in 1:nrow(asas2)) {
-        
-        p <- asas2[i, 1:2]
-        head(ww <- biogeoTools::gwDistance(coodXY = as.matrix(asas2[,1:2]), pointXY = as.matrix(p), tau = resIn * factor))
-        w <- as.vector(ww)
-        covmat <- biogeoTools::gwCovariance(y=DTIN, w=w)
-        edc <- eigen(covmat, symmetric = TRUE)
-        ev <- edc$values
-        if (any(neg <- ev < 0)) {ev[neg] <- 0}
-        sdev <- sqrt(ev)
-        z[[i]] <-  mean(sdev)
+    z <- list()
+    for(i in 1:nrow(asas2)) {
+      
+      p <- asas2[i, 1:2]
+      head(ww <- biogeoTools::gwDistance(coodXY = as.matrix(asas2[,1:2]), pointXY = as.matrix(p), tau = resIn * factor))
+      w <- as.vector(ww)
+      covmat <- biogeoTools::gwCovariance(y=DTIN, w=w)
+      edc <- eigen(covmat, symmetric = TRUE)
+      ev <- edc$values
+      if (any(neg <- ev < 0)) {ev[neg] <- 0}
+      sdev <- sqrt(ev)
+      z[[i]] <-  mean(sdev)
     }
-
+    
   }
-
+  
   zValues <- unlist(z)  
   
   Hetero_base[heteroCellID] <- zValues
   
-
+  
   if(save){
     if(!dir.exists(outdir)){dir.create(outdir)}
     
@@ -95,9 +95,9 @@ gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, 
                        paste0(outdir, '/Hetero_', factor,'.tif'))
     
   } else{
-   plot(Hetero_base) 
+    plot(Hetero_base) 
   }
   
   return(Hetero_base)
- 
+  
 }
