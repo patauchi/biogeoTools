@@ -2,8 +2,10 @@
 
 export(gwCovariance)
 export(gwDistance)
+export(gwEigen)
 export(gwHeterogeneity)
 export(gwMultiMatrix)
+export(gwRelav)
 export(gwRound)
 export(gwTraspose)
 export(gwminus)
