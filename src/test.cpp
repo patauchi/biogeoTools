@@ -1,11 +1,9 @@
 #include "config.h"
 #include <RcppArmadillo.h>
-#include <Rcpp.h>
 #include <math.h>
 #include <Rmath.h>
 
 // [[Rcpp::plugins(cpp11)]]
-// [[Rcpp::depends(RcppArmadillo)]]
 
 using namespace Rcpp;
 using namespace arma;
