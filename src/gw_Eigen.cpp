@@ -1,11 +1,8 @@
 #include <RcppArmadillo.h>
+
 // [[Rcpp::depends(RcppArmadillo)]]
 
-using namespace Rcpp;
-using namespace arma;
-
 // [[Rcpp::export]]
-arma::vec gw_Eigen(arma::mat M) {
-  arma::vec values=arma::eig_sym(M);
-  return values;
+arma::cx_vec getEigenValues(arma::mat M) {
+  return arma::eig_gen(M);
 }
