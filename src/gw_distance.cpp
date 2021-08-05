@@ -10,16 +10,16 @@ using namespace arma;
 using namespace stats;
 
 double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, double tau) {
-  double as1 = ((lon2 - lon1 ) * (lon2 - lon1 )) + ((lat2 - lat1 ) * (lat2 - lat1 ));
+  double as1 = (((lon2 - lon1 ) * (lon2 - lon1 )) + ((lat2 - lat1 ) * (lat2 - lat1 )));
   double as2 = std::exp(-as1 / (2 * (tau * tau)));
   return as2;
 }
 
 
 // [[Rcpp::export]]
-arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau) {
+vec gw_Distance(arma::rowvec pointXY, arma::mat coodXY, double tau) {
   int N = coodXY.n_rows, j;
-  vec dists(N, fill::zeros);
+  arma::vec dists(N, fill::zeros);
   double uout = pointXY(0), vout = pointXY(1);
   for (j = 0; j < N; j++) {
     
@@ -28,3 +28,4 @@ arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau) {
   }
   return dists;
 }
+
