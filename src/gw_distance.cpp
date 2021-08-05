@@ -17,7 +17,7 @@ double sp_dists_pp(double lon1, double lon2, double lat1, double lat2, double ta
 
 
 // [[Rcpp::export]]
-vec gw_Distance(arma::rowvec pointXY, arma::mat coodXY, double tau) {
+vec gw_Distance(arma::vec pointXY, arma::mat coodXY, double tau) {
   int N = coodXY.n_rows, j;
   arma::vec dists(N, fill::zeros);
   double uout = pointXY(0), vout = pointXY(1);
