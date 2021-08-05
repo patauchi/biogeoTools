@@ -12,6 +12,28 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// gw_Eigen
+arma::vec gw_Eigen(arma::mat M);
+RcppExport SEXP _biogeoTools_gw_Eigen(SEXP MSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type M(MSEXP);
+    rcpp_result_gen = Rcpp::wrap(gw_Eigen(M));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gw_Relav
+NumericVector gw_Relav(NumericVector xx);
+RcppExport SEXP _biogeoTools_gw_Relav(SEXP xxSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type xx(xxSEXP);
+    rcpp_result_gen = Rcpp::wrap(gw_Relav(xx));
+    return rcpp_result_gen;
+END_RCPP
+}
 // gw_Distance
 arma::vec gw_Distance(arma::mat coodXY, arma::vec pointXY, double tau);
 RcppExport SEXP _biogeoTools_gw_Distance(SEXP coodXYSEXP, SEXP pointXYSEXP, SEXP tauSEXP) {
@@ -139,6 +161,8 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_biogeoTools_gw_Eigen", (DL_FUNC) &_biogeoTools_gw_Eigen, 1},
+    {"_biogeoTools_gw_Relav", (DL_FUNC) &_biogeoTools_gw_Relav, 1},
     {"_biogeoTools_gw_Distance", (DL_FUNC) &_biogeoTools_gw_Distance, 3},
     {"_biogeoTools_distanceCalculate", (DL_FUNC) &_biogeoTools_distanceCalculate, 4},
     {"_biogeoTools_normalize", (DL_FUNC) &_biogeoTools_normalize, 1},
