@@ -5,3 +5,4 @@ CXX=ccache clang++ -Qunused-arguments
 CCACHE_CPP2=yes
 
 CXX11STD = -std=c++11
+PKG_LIBS=-dsyev
