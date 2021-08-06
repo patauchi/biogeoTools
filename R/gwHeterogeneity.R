@@ -13,6 +13,7 @@
 #' @importFrom parallel stopCluster
 #' @import foreach raster terra doSNOW 
 #' @useDynLib biogeoTools
+#' @export
 
 
 gwHeterogeneity <- function(layers, factor, parallel=TRUE, cores=4, save=FALSE, outdir='.', type='SOCK') {
