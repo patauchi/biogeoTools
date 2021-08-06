@@ -3,6 +3,6 @@
 // [[Rcpp::depends(RcppArmadillo)]]
 
 // [[Rcpp::export]]
-arma::cx_vec getEigenValues(arma::mat M) {
-  return arma::eig_gen(M);
+arma::vec gw_Eigen(arma::mat M) {
+  return arma::eig_sym(M);
 }
