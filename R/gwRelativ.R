@@ -2,7 +2,7 @@
 #' @param xx a vector type
 #' @description Relative Sum
 #' @return `gwRelav` relativ sum
-#' @useDynLib biogeoTools
+#' @useDynLib biogeoTools 
 #' @export
 
 gwRelav <- function(xx){

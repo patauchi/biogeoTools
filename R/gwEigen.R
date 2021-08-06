@@ -2,7 +2,7 @@
 #' @param M a matrix 
 #' @description trapozoid_roc applies the trapezoidal integration for Partial ROC curve.
 #' @return `Eigen` rounds the eigen values
-#' @useDynLib biogeoTools
+#' @useDynLib biogeoTools 
 #' @export
 
 gwEigen <- function(M){

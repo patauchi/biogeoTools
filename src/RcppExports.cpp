@@ -47,44 +47,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// distanceCalculate
-double distanceCalculate(double x1, double y1, double x2, double y2);
-RcppExport SEXP _biogeoTools_distanceCalculate(SEXP x1SEXP, SEXP y1SEXP, SEXP x2SEXP, SEXP y2SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type x1(x1SEXP);
-    Rcpp::traits::input_parameter< double >::type y1(y1SEXP);
-    Rcpp::traits::input_parameter< double >::type x2(x2SEXP);
-    Rcpp::traits::input_parameter< double >::type y2(y2SEXP);
-    rcpp_result_gen = Rcpp::wrap(distanceCalculate(x1, y1, x2, y2));
-    return rcpp_result_gen;
-END_RCPP
-}
-// normalize
-NumericVector normalize(NumericVector x);
-RcppExport SEXP _biogeoTools_normalize(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(normalize(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// calc_moran
-NumericVector calc_moran(NumericVector x, NumericVector c1, NumericVector c2);
-RcppExport SEXP _biogeoTools_calc_moran(SEXP xSEXP, SEXP c1SEXP, SEXP c2SEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type x(xSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type c1(c1SEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type c2(c2SEXP);
-    rcpp_result_gen = Rcpp::wrap(calc_moran(x, c1, c2));
-    return rcpp_result_gen;
-END_RCPP
-}
 // gw_multiMM
 SEXP gw_multiMM(const Eigen::Map<Eigen::MatrixXd> A, Eigen::Map<Eigen::MatrixXd> B);
 RcppExport SEXP _biogeoTools_gw_multiMM(SEXP ASEXP, SEXP BSEXP) {
@@ -164,9 +126,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_biogeoTools_gw_Eigen", (DL_FUNC) &_biogeoTools_gw_Eigen, 1},
     {"_biogeoTools_gw_Relav", (DL_FUNC) &_biogeoTools_gw_Relav, 1},
     {"_biogeoTools_gw_Distance", (DL_FUNC) &_biogeoTools_gw_Distance, 3},
-    {"_biogeoTools_distanceCalculate", (DL_FUNC) &_biogeoTools_distanceCalculate, 4},
-    {"_biogeoTools_normalize", (DL_FUNC) &_biogeoTools_normalize, 1},
-    {"_biogeoTools_calc_moran", (DL_FUNC) &_biogeoTools_calc_moran, 3},
     {"_biogeoTools_gw_multiMM", (DL_FUNC) &_biogeoTools_gw_multiMM, 2},
     {"_biogeoTools_gw_plus", (DL_FUNC) &_biogeoTools_gw_plus, 2},
     {"_biogeoTools_gw_minus", (DL_FUNC) &_biogeoTools_gw_minus, 2},

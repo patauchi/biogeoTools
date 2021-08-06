@@ -4,7 +4,8 @@
 #' @param tau sadasda
 #' @description This function computes and returns the distance matrix computed by using the specified distance measure to compute the distances between the rows of a data matrix.
 #' @return Returns the geographical weights distance among environmental layers or variables.
-#' @useDynLib biogeoTools
+#' @useDynLib biogeoTools  
+#' 
 #' @export
 
 gwDistance <- function(coodXY,pointXY, tau){

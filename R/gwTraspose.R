@@ -9,8 +9,8 @@
 #' a <- matrix(1:28, 4, 7)
 #' gwTraspose(a, byrow=TRUE)
 #' 
-#' @useDynLib biogeoTools
 #' @import Rcpp
+#' @useDynLib biogeoTools
 #' @export
 
 gwTraspose <- function(m, byrow = FALSE){

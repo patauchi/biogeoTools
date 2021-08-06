@@ -4,4 +4,6 @@ CC=ccache clang -Qunused-arguments
 CXX=ccache clang++ -Qunused-arguments
 CCACHE_CPP2=yes
 
+CFLAGS = -Wall -g
+
 

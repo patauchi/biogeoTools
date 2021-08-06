@@ -12,7 +12,6 @@
 #' @importFrom data.table data.table
 #' @importFrom parallel stopCluster
 #' @import foreach raster terra doSNOW 
-#' @useDynLib biogeoTools
 #' @export
 
 

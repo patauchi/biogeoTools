@@ -14,7 +14,6 @@
 #' @importFrom dplyr  %>%
 #' @importFrom future %<-%
 #' @importFrom raster values
-#' @useDynLib biogeoTools
 #' 
 #' @export
 

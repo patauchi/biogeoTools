@@ -3,7 +3,7 @@
 #' @param y vector
 #' @description Operators Plus
 #' @return Oparations of Matrix by Vector
-#' @useDynLib biogeoTools
+#' @useDynLib biogeoTools 
 #' @export
 
 gwplus <- function(X,y){
@@ -15,7 +15,7 @@ gwplus <- function(X,y){
 #' @param y vector
 #' @description Operators Plus
 #' @return Oparations of Matrix by Vector
-#' @useDynLib biogeoTools
+#' @useDynLib biogeoTools 
 #' @export
 
 

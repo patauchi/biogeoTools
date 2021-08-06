@@ -13,18 +13,6 @@ gw_Distance <- function(coodXY, pointXY, tau) {
     .Call('_biogeoTools_gw_Distance', PACKAGE = 'biogeoTools', coodXY, pointXY, tau)
 }
 
-distanceCalculate <- function(x1, y1, x2, y2) {
-    .Call('_biogeoTools_distanceCalculate', PACKAGE = 'biogeoTools', x1, y1, x2, y2)
-}
-
-normalize <- function(x) {
-    .Call('_biogeoTools_normalize', PACKAGE = 'biogeoTools', x)
-}
-
-calc_moran <- function(x, c1, c2) {
-    .Call('_biogeoTools_calc_moran', PACKAGE = 'biogeoTools', x, c1, c2)
-}
-
 gw_multiMM <- function(A, B) {
     .Call('_biogeoTools_gw_multiMM', PACKAGE = 'biogeoTools', A, B)
 }

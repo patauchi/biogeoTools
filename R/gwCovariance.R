@@ -3,15 +3,14 @@
 #' @param ww Geographical Weights Distances
 #' @description gwCovariance compute the variance of x and the covariance or correlation of x and y if these are vectors.
 #' @return `gwCovariance` Returns the weighted covariance matrix of y (by columns)
-#' @useDynLib biogeoTools
 #' @export
 
 gwCovariance <- function(y, ww) {
   if (missing(ww)) return (cov(y))
-  w <-biogeoTools::gwRound(ww / sum(ww), 10) # Standardize the weights
+  w <- gwRound(ww / sum(ww), 10) # Standardize the weights
   y.bar <- colSums(gwplus(y, w))
-  z <- gwminus(biogeoTools::gwTraspose(y, byrow = TRUE), y.bar)
-  gwMultiMatrix(z, gwplus(biogeoTools::gwTraspose(z, byrow = TRUE), w))
+  z <- gwminus( gwTraspose(y, byrow = TRUE), y.bar)
+  gwMultiMatrix(z, gwplus( gwTraspose(z, byrow = TRUE), w))
 
 }
 
