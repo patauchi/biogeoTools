@@ -6,4 +6,4 @@ CCACHE_CPP2=yes
 
 CXX11STD = -std=c++11
 
-PKG_LIBS=-dsyev
+PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
