@@ -1,7 +1,7 @@
 Package: biogeoTools
 Type: Package
 Title: Tools for Biogeographic Analyses
-Version: 1.2.1
+Version: 1.3.6
 Date: 2021-07-16
 Authors@R: c(person("P.J", "Atauchi", 
                      email = "patauchi@gmail.com",
@@ -15,7 +15,7 @@ Description: One paragraph description of what the package does as one or more f
 Maintainer: P. Joser Atauchi <patauchi@gmail.com>
 License: GPL-3
 Encoding: UTF-8
-Imports: Rcpp (>= 1.0.7), data.table, future, foreach, raster, terra, doSNOW, Rmpi, doMPI, furrr, rio, dplyr
+Imports: Rcpp (>= 1.0.7)
 LinkingTo: Rcpp, RcppArmadillo, RcppEigen
 Suggests: Rfast
 SystemRequirements: C++11

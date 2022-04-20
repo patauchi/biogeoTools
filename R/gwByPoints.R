@@ -8,7 +8,7 @@
 #' @export
 #' 
 
-gwByPoints <- function(coorXY, pointXY, env, taus){
+gwByPointsOlder <- function(coorXY, pointXY, env, taus){
   wwtest <- gwDistance(as.matrix(coorXY),as.matrix(pointXY), tau = taus)
   m1test <- gwRelav(as.vector(wwtest))
   wtest <- gwRound(as.vector(m1test),10)
