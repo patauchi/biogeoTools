@@ -7,7 +7,7 @@
 MannKendallc(x)
 }
 \arguments{
-\item{vc}{Time series data vector.}
+\item{x}{Time series data vector.}
 }
 \value{
 Returns the geographical weights distance among environmental layers or variables.

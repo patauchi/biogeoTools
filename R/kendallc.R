@@ -1,5 +1,5 @@
 #' Mann-Kendall Test Corrected
-#' @param vc Time series data vector.
+#' @param x Time series data vector.
 #' @description Time series data is often influenced by serial-correlation. 
 #' When data is not random and influenced by auto-correlation, 
 #' Modified Mann-Kendall tests are to be used in trend detection. 
@@ -11,6 +11,9 @@
 #' @references Kendall, M. (1975). Multivariate analysis. Charles Griffin. Londres. 0-85264-234-2.
 #' @references Sen, P. K. (1968). Estimates of the Regression Coefficient Based on Kendall’s Tau. Journal of the American Statistical Association, 63(324), 1379. http://doi.org/10.2307/2285891
 #' @references Yue, S., & Wang, C. Y. (2004). The Mann-Kendall test modified by effective sample size to detect trend in serially correlated hydrological series. Water Resources Management, 18(3), 201–218. http://doi.org/10.1023/B:WARM.0000043140.61082.60
+#' 
+#' @importFrom stats acf pnorm
+#' 
 #' @export
 
 MannKendallc<- function (x) 

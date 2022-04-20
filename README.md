@@ -34,26 +34,8 @@ Please cite the package as
 Atauchi, P.J., Peterson, A. T. (2021). biogeoTools: Tools for Biogeographical Analyses. R package version 1.0.
 
 ### Environmental Heterogeneity
-Atauchi, P.J., Peterson, A. T. (2022). The importance of environmental heterogeneity on species distribution.
+Atauchi, P.J., Peterson, A. T. (2022). Incorporating 
 
 
 The paper of the application is accesible from https://
 
-
-### Points Spatial Correlation
-Atauchi, P.J., Peterson, A. T. (2022). Bias on spatial points
-
-
-The paper of the application is accesible from https://
-
-
-### Effect of the Bias Samples on Species Distribution Models
-Atauchi, P.J., Peterson, A. T. (2022). 
-
-
-The paper of the application is accesible from https://
-
-
-# Acknowledgements
-
-Biodiversity Institute, The University of Kansas for academic trainingl; MatBios 2021 PAIP N87387257 and I324927 for partial financial support.
